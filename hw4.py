@@ -1,4 +1,7 @@
+#!usr/bin/env python3
+
 input_list = input()
+
 
 len_str = len(input_list)
 integ = []
