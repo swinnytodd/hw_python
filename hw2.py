@@ -1,33 +1,5 @@
 #!/usr/bin/env python3
-"""
-1. Составить таблицу соответствия между различными объектами основных классов: int, str и объектами класса bool.
-2.  Разобраться с различиями между input() и raw_input(). Также в контексте разных версий python: 2 и 3.
-Разница между этими функциями зависит от версии Python. Например в Python2  функция raw_input() используется для получения ввода от пользователя через командную строку, а input() оценивает ее и попробует запустить как код Python.
-
-В Python 3 от raw_input() избавились, оставив только input(). Она используется для получения ввода пользователя с клавиатуры. Возможности input() из Python 2 в Python 3 работать не будут. Для той же операции нужно использовать инструкцию eval(input())
-"""
-"""2. #Python2
-txt = raw_input("Введите что-нибудь, чтобы проверить это: ")
-print "Это то, что вы только что ввели?", txt  """
-
-#python3
-def my_list(name):
-    list_ = []
-    tmp = name.split()
-    for i in tmp:
-        if i not in list_:
-            list_.append(i)
-    print(' '.join(list_))
-
-
-inp = input('Input:' )
-my_list(inp)
-
-"""
-3. Найти и прочитать PEP про изменение print между python2 и python3.
-- PEP 3105 Опысывает, то что Print превратили в функцию
-- При делении целых цисел результат вещественное число (Python3)
-- По умолчанию строки хранятся в unicod
-- Введена ф-я range() вместо xrange()
-- Версия python3 обратно не совместима
-"""
+input_list = input().split()
+buff = {}
+res_list = " ".join([buff.setdefault(x, x) for x in input_list if x not in buff])
+print(res_list)
