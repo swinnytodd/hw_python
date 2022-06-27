@@ -11,13 +11,17 @@ txt = raw_input("Введите что-нибудь, чтобы проверит
 print "Это то, что вы только что ввели?", txt  """
 
 #python3
-any_num = input("Любое число ")
+def my_list(name):
+    list_ = []
+    tmp = name.split()
+    for i in tmp:
+        if i not in list_:
+            list_.append(i)
+    print(' '.join(list_))
 
-try:
-    test_num = int(any_num)
-    print("Это правильный ввод! Ваше число: ", test_num)
-except ValueError:
-    print("Это не правильный ввод. Это не число вообще! Это строка, попробуйте еще раз.")
+
+inp = input('Input:' )
+my_list(inp)
 
 """
 3. Найти и прочитать PEP про изменение print между python2 и python3.
